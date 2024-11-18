@@ -1,5 +1,401 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--main-bg-color, #000028);
+  font-family: var(--text-font, sans serif);
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 15px 10px 15px 10px;
+  position: relative;
+  block-size: 100vh;
+  min-block-size: 668px;
+
+  @media (width >= 768px) {
+    padding: 15px 20px 15px 20px;
+  }
+
+  @media (width >= 1024px) {
+    padding: 20px 20px 10px 20px;
+  }
+}
+
+.decorated-zone::before {
+  content: '';
+  border-top: var(--theme-color) 1px solid;
+  border-right: var(--theme-color) 1px solid;
+  inline-size: 25px;
+  block-size: 25px;
+  position: absolute;
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+
+}
+
+@media (width >= 768px) {
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+}
+
+.decorated-zone::after {
+  content: '';
+  border-bottom: var(--theme-color) 1px solid;
+  border-left: var(--theme-color) 1px solid;
+  inline-size: 25px;
+  block-size: 25px;
+  position: absolute;
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+
+}
+
+@media (width >= 768px) {
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
+  }
+}
+
+.header__decoration {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: var(--theme-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 25px;
+  inset-inline-end: 19px;
+  inset-block-start: 10px;
+
+  @media (width >= 768px) {
+    inset-inline-end: 29px;
+    inset-block-start: 20px;
+  }
+}
+
+.header__decoration::before {
+  content: 'REC';
+  display: inline;
+}
+
+.header__decoration::after {
+  content: '';
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  margin-left: 10px;
+  background-color: var(--theme-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--theme-color);
+}
+
+.header__theme-menu {
+  justify-self: flex-end;
+  align-self: center;
+  
+  @media (width >= 1024px) {
+    justify-self: center;
+    align-self: flex-start;
+  }
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (width >= 1024px) {
+    flex-direction: row;
+  }
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--theme-color);
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: lowercase;
+  border: 1px solid transparent;
+  padding: 2px 13px 4px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: var(--hover-color) 1px solid;
+}
+
+/*.header__theme-menu-button:active {
+  outline: var(--accent-color) 1px solid;
+}*/
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: var(--theme-color) 1px solid;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: var(--theme-color) 1px solid;
+}
+
+.header__title {
+  font-weight: 700;
+  color: var(--h1-text-color, #DB00FF);
+  text-shadow: 4px 4px 0 #FF0070;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: var(--h1-line-height);
+  margin-block-start: 0;
+  margin-block-end: 10px;
+  display: inline;
+
+  @media (width >= 768px) {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    line-height: calc(var(--h1-line-height) + 3.3px);
+    margin-inline-start: -20px;
+    margin-block-end: 0;
+  }
+
+  @media (width >= 1024px) {
+    font-size: clamp(9.8125rem, NaNrem + NaNvw, 9.8125rem);
+    margin-inline-start: -20px;
+    margin-block-end: 0;
+  }
+}
+
+.header__text {
+  color: var(--header-text-color);
+  font-weight: 700;
+  font-size: 18px;
+  white-space: pre-wrap;
+  line-height: var(--main-line-height);
+  max-block-size: 117px;
+  max-inline-size: 364px;
+  align-self: center;
+  justify-self: end;
+
+  @media (width >= 1024px) {
+    max-inline-size: 491px;
+  }
+}
+
+.title-decor {
+  background-color: var(--accent-color, #FF0070);
+}
+
+.content {
+  padding: 40px 10px 40px;
+  display: grid;
+  gap: 50px;
+
+  @media (width >= 768px) {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+}
+
+.content__section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (width >= 768px) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  @media (width >= 1024px) {
+    grid-template-columns: 314.96px auto;
+  }
+}
+
+.content__section_columns {
+  grid-template-columns: 1fr;
+}
+
+.content__section-articles {
+  display: grid;
+  gap: 20px;
+}
+
+.content__section-articles-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: var(--main-line-height);
+  color: var(--header-text-color);
+}
+
+.content__section-articles_columns {
+  grid-template-columns: 1fr;
+
+  @media (width >= 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.content__article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content__section-title {
+  color: var(--theme-color);
+  font-size: 18px;
+  line-height: var(--main-line-height);
+}
+
+.content__section-title_bounded {
+  @media (width >= 768px) {
+    max-inline-size: 236px;
+  }
+
+  @media (width >= 1024px) {
+    max-inline-size: 315px;
+  }
+}
+
+.content__article-title {
+  font-size: 18px;
+  line-height: var(--main-line-height);
+  color: var(--header-text-color);
+}
+
+.content__article-title_thin {
+  font-weight: 400;
+}
+
+.content__article-text {
+  font-size: 18px;
+  color: var(--main-text-color);
+  line-height: var(--main-line-height);
+}
+
+.content__article-text_link {
+  text-shadow: 2px 1px 0 var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content__article-text_link:hover {
+  text-decoration: underline;
+}
+
+.content__article-text_link:focus {
+  outline: none;
+}
+
+.content__article-text_link:focus-visible {
+  outline: var(--main-text-color) 1px solid;
+  outline-offset: -1px;
+}
+
+.content__section_gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @media (width >= 768px) {
+    gap: 20px;
+  }
+}
+
+.content__section_gallery-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: var(--main-line-height);
+  color: var(--header-text-color);
+}
+
+.content__gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+  }
+}
+
+.content__gallery-item {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+@media (width >= 768px) {
+  .content__gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .content__gallery-item:nth-child(2) {
+    grid-column: 3/ 4;
+    grid-row: 1 / 3;
+  }
+
+  .content__gallery-item:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 5;
+  }
+
+  .content__gallery-item:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .content__gallery-item:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 3 / 5;
+  }
+}
+
+.content__gallery-image {
+  object-fit: cover;
+  inline-size: 100%;
+  object-position: center;
+  block-size: 100%;
+  display: block;
+}
+
+.footer {
+  block-size: 100vh; 
+  min-block-size: 668px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  font-weight: 700;
+  color: var(--h1-text-color, #DB00FF);
+  text-shadow: 2px 2px 0 #FF0070;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: var(--h1-line-height);
+
+  @media (width >= 768px) {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    line-height: calc(var(--h1-line-height) + 3.3px);
+  }
+
+  @media (width >= 1024px) {
+    font-size: clamp(9.8125rem, NaNrem + NaNvw, 9.8125rem);
+  }
 }

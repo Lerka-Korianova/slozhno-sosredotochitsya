@@ -4,9 +4,65 @@
   переключая тему
 */
 
+:root.theme-dark {
+  --main-bg-color: #000028;
+  --accent-color: #FF0070;
+  --h1-text-color: #DB00FF;
+  --main-text-color: #F1B2CE;
+  --text-font: 'IBM Plex mono';
+  --main-line-height: 23.4px;
+  --h1-line-height: 95.7px;
+  --theme-color: #FF0070;
+  --header-text-color: #000028;
+  --hover-color: #660E53;
+}
+
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  background-image: url(/images/cover-image-dark.png);
+  --main-bg-color: #000028;
+  --accent-color: #FF0070;
+  --h1-text-color: #DB00FF;
+  --main-text-color: #F1B2CE;
+  --theme-color: #FF0070;
+  --header-text-color: #000028;
+  --hover-color: #660E53;
+  --text-font: 'IBM Plex mono';
+  --main-line-height: 23.4px;
+  --h1-line-height: 95.7px;
+}
+
+.header__theme-menu-button.theme_dark:hover {
+  border: var(--hover-color) 1px solid;
+}
+
+.theme_dark .header__decoration{
+  display: flex;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: #000028;
+    --accent-color: #FF0070;
+    --h1-text-color: #DB00FF;
+    --main-text-color: #F1B2CE;
+    --theme-color: #FF0070;
+    --header-text-color: #000028;
+    --hover-color: #660E53;
+    --text-font: 'IBM Plex mono';
+    --main-line-height: 23.4px;
+    --h1-line-height: 95.7px;
+    }
+
+    .header__theme-menu-button:hover {
+      border: var(--hover-color) 1px solid;
+    }
+
+    .header__decoration{
+      display: flex;
+    }
 }
