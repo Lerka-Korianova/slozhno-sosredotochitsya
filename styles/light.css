@@ -36,7 +36,11 @@
   background-attachment: fixed;*/
 }
 
-.theme_light .header__decoration{
+.theme-light .page {
+  background-image: url(/images/cover-image-light.png);
+}
+
+.theme_light .header__decoration {
   display: none;
 }
 
@@ -62,7 +66,7 @@
     background-image: url(/images/cover-image-light.png);
   }
 
-  .header__decoration{
+  .header__decoration {
     display: none;
   }
 

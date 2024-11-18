@@ -35,11 +35,15 @@
   --h1-line-height: 95.7px;
 }
 
+.theme-dark .page {
+  background-image: url(/images/cover-image-dark.png);
+}
+
 .header__theme-menu-button.theme_dark:hover {
   border: var(--hover-color) 1px solid;
 }
 
-.theme_dark .header__decoration{
+.theme_dark.header__decoration {
   display: flex;
 }
 
@@ -62,7 +66,11 @@
       border: var(--hover-color) 1px solid;
     }
 
-    .header__decoration{
+    .header__decoration {
       display: flex;
+    }
+
+    .page {
+      background-image: url(/images/cover-image-dark.png);
     }
 }
