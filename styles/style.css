@@ -115,6 +115,7 @@
 
   @media (width >= 1024px) {
     flex-direction: row;
+    gap: 10px;
   }
 }
 
@@ -149,7 +150,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: var(--theme-color) 1px solid;
+  border: var(--theme-color) 1px solid;
 }
 
 .header__title {
@@ -201,7 +202,7 @@
   gap: 50px;
 
   @media (width >= 768px) {
-    padding: 60px 20px;
+    padding: 61px 20px;
     gap: 80px;
   }
 }
