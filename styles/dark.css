@@ -29,7 +29,7 @@
   --main-text-color: #F1B2CE;
   --theme-color: #FF0070;
   --header-text-color: #000028;
-  --hover-color: #660E53;
+  --hover-color: 255, 0, 112;
   --text-font: 'IBM Plex mono';
   --main-line-height: 23.4px;
   --h1-line-height: 95.7px;
@@ -40,7 +40,7 @@
 }
 
 .header__theme-menu-button.theme_dark:hover {
-  border: var(--hover-color) 1px solid;
+  border: rgba(var(--hover-color), 0.4) 1px solid;
 }
 
 .theme_dark.header__decoration {
@@ -56,14 +56,14 @@
     --main-text-color: #F1B2CE;
     --theme-color: #FF0070;
     --header-text-color: #000028;
-    --hover-color: #660E53;
+    --hover-color: 255, 0, 112;
     --text-font: 'IBM Plex mono';
     --main-line-height: 23.4px;
     --h1-line-height: 95.7px;
     }
 
     .header__theme-menu-button:hover {
-      border: var(--hover-color) 1px solid;
+      border: rgba(var(--hover-color), 0.4) 1px solid;
     }
 
     .header__decoration {
